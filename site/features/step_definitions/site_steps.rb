@@ -20,7 +20,22 @@ Entao("preencho os dados de cadastro") do
   find(:xpath, "//*[@id='signupbox']").click
 end
 
+Dado("clique no botão Let's add some tasks!") do
+  visit ("http://www.juliodelima.com.br/taskit/task")
+  #click_link "signup"
+  find(".waves-effect waves-light red darken-2 btn").click_link_or_button
+end
 
+#Dado("no botão + Add a task") do
+ 
+#end
+
+#Dado("preencha os dados da pergunta") do
+#end
+
+#Entao("o sistema salva a pergunta") do
+  
+#end
 
 Dado("que o usuario esteja no site do Julio Lima") do
   visit "http://www.juliodelima.com.br/taskit/"
@@ -35,7 +50,6 @@ Dado("clique no botao Sign In") do
   all(".modal-trigger")[0].click
 end
 
-
 Entao("o usuario preenche os dados de login") do
   # fill_in "login", with: "eduarda.maria@gmail.com"
   # fill_in "password", with: "102030"
@@ -49,10 +63,15 @@ Entao("o usuario preenche os dados de login") do
   #find('input[placeholder="Please, tell us your login"]').set "eduarda.maria@gmail.com"
   # findElement("By.cssSelector('input[name=login'])").set "eduarda.maria@gmail.com"
   #find(:xpath, "//*[@id='signinbox']/div[1]/form/div[2]/div[1]/input").setKeys "eduarda.maria@gmail.com"
-  within('#signinbox ') do
-  find("input[name='login']").set "xxxxxxx@xxx.com"
-  find("input[name='password']").set "102030"
-end
+  within("#signinbox ") do
+    find("input[name='login']").set "xxxxxxx@xxx.com"
+    find("input[name='password']").set "102030"
+  end
   # find(:xpath, "//*[@id='signinbox']/div[2]").click
 
+end
+Dado("o usuario cria uma tesk") do
+  #find(".waves-effect waves-light red darken-2 btn").click
+
+ find(:xpath, "/html/body/div[2]/div/div/p[2]/a ") .click
 end
